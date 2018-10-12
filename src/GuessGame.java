@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class GuessGame {
     public static void main(String[] args) {
         //GET USERNAME
+        System.out.print("What is your name?");
         Scanner input = new Scanner(System.in);
         String username = input.nextLine();
         //MODE SELECTOR AND NUMBER GENERATOR
@@ -28,13 +29,14 @@ public class GuessGame {
         }
         System.out.print("Guess Number");
         int gass = input.nextInt();
-        int tries = 0;
+        int tries = 1;
         while (gass != random){
             System.out.print("Guess again.");
+            gass = input.nextInt();
             tries++;
         }
         if (gass == random){
-            System.out.print("Correct, it took " + tries + username);
+            System.out.print("Correct, it took " + tries + " tries "+ username);
         }
     }
 }
